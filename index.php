@@ -23,12 +23,12 @@
             <input type="password" class="form-control" name="senha" placeholder="Senha">
         </div>
         <div class="form-group form-check">
-            <input class="form-check-input" type="radio" name="tipo-user" value="medico">
+            <input class="form-check-input" type="radio" name="tipo" value="medico">
             <label class="form-check-label" for="exampleRadios1">
                 Médico
             </label>
             </br>
-            <input class="form-check-input" type="radio" name="tipo-user" value="paciente">
+            <input class="form-check-input" type="radio" name="tipo" value="paciente">
             <label class="form-check-label" for="exampleRadios2">
                 Paciente
             </label>

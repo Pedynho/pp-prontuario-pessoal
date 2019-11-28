@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="vendor/css/bootstrap.css">
 </head>
 <body>
+    <div class="container">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -34,5 +35,6 @@
             ?>  
         </tbody>
     </table>
+    </div>
 </body>
 </html>
