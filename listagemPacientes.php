@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="container">
+    <h3 class="mt-5">Lista de pacientes</h3>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -15,6 +16,7 @@
             <th scope="col">Altura</th>
             <th scope="col">Peso</th>
             <th scope="col">Tipo Sanguíneo</th>
+            <th scope="col">Mais informações</th>
             </tr>
         </thead>  
         <tbody>  
@@ -23,14 +25,21 @@
                 $linhas = getPacientes($con);
                 mysqli_fetch_assoc($linhas);
                 foreach ($linhas as $linha){
-                    echo "
+            ?>
                     <tr>
-                        <td>".$linha['nome']."</td>
-                        <td>".$linha['sexo']."</td>
-                        <td>".$linha['altura']."</td>
-                        <td>".$linha['peso']."</td>
-                        <td>".$linha['tipo-sanguineo']."</td>
-                    </tr>";
+                        <td><?= $linha['nome'] ?> </td>
+                        <td><?= $linha['sexo'] ?></td>
+                        <td><?= $linha['altura'] ?></td>
+                        <td><?= $linha['peso'] ?></td>
+                        <td><?= $linha['tipo-sanguineo'] ?></td>
+                        <td class="text-center">
+                            <form action='perfilPaciente.php' method='post'> 
+                                <input type="hidden" id="custId" name="id" value="<?= $linha['idpaciente'] ?>">
+                                <input type="submit" class="btn btn-primary" value="Mais...">
+                            </form>
+                        </td>
+                    </tr>
+            <?php
                 }
             ?>  
         </tbody>

@@ -10,10 +10,15 @@
         }
 
         $res = mysqli_query($con,$sql);
-        if($res != NULL){
+        $linha = mysqli_fetch_assoc($res);
+
+        if($linha['usuario'] == $user && $linha['senha'] == $senha){
             return 1;
         }
-        echo $sql;
+        if($linha['idpaciente'] == $user && $linha['senha'] == $senha){
+            return 1;
+        }
+
         return 0;
     }
 ?>

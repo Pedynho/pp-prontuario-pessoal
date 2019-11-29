@@ -14,38 +14,38 @@
     }
 
     function getMedicamentos($con,$id){
-        $sql = "SELECT * FROM paciente ";
+        $sql = "SELECT * FROM `medicamentos` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
         return $res;
     }
 
     function getExames($con,$id){
-        $sql = "SELECT * FROM paciente ";
+        $sql = "SELECT * FROM `exames` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
         return $res;
     }
 
     function getCirurgias($con,$id){
-        $sql = "SELECT * FROM paciente ";
+        $sql = "SELECT * FROM `cirurgias` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
-        return mysqli_fetch_assoc($res);
+        return $res;
     }
 
     function getHabitos($con,$id){
-        $sql = "SELECT nome, sexo, altura, peso, `tipo-sanguineo` FROM paciente WHERE 1";
+        $sql = "SELECT * FROM `habitos` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
-        return mysqli_fetch_assoc($res);
+        return $res;
     }
 
     function getVacinacao($con,$id){
-        $sql = "SELECT nome, dose, data, anotacoes FROM vacinacao WHERE idvacinacao = ".$id;
+        $sql = "SELECT * FROM `vacinacao` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
-        return mysqli_fetch_assoc($res);
+        return $res;
     }
 
     function getDadosGeograficos($con,$id){
-        $sql = "SELECT * FROM paciente ";
+        $sql = "SELECT * FROM `dados-geograficos` WHERE paciente_idpaciente = $id";
         $res =  mysqli_query($con,$sql);
-        return mysqli_fetch_assoc($res);
+        return $res;
     }
 ?>
