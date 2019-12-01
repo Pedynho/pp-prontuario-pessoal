@@ -8,6 +8,11 @@
 <body>
     <div class="container">
     <h3 class="mt-5">Lista de pacientes</h3>
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <p><a href="formCadastro.php" class="btn btn-primary">Adicionar Paciente</a></p>
+        </div>
+    </div>
     <table class="table table-bordered">
         <thead>
             <tr>

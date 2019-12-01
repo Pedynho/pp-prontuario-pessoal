@@ -64,7 +64,11 @@
                         RG: <?= $linha['rg'] ?> </br>
                         Cartão SUS: <?= $linha['cartao-sus'] ?> </br>
                     </p>
-                    <a href="#" class="btn btn-primary">Editar Informações</a>
+                    <form action="formPaciente.php" method="post">
+                        <input name="id" type="hidden" value="<?= $id ?>"/>
+                        <input name="btn" type="hidden" value="perfil"/>
+                        <button type="submit" class="btn btn-primary">Editar Informações</buttom>
+                    </form>
 
                     <?php
                         }
@@ -84,8 +88,11 @@
                         Drogas Ilícitas: <?= $linha['drogas-ilicitas'] ?> </br>
                         Sono: <?= $linha['sono'] ?> Horas</br>
                     </p>
-                    <a href="#" class="btn btn-primary">Editar Hábitos</a>
-
+                    <form action="formPaciente.php" method="post">
+                        <input name="id" type="hidden" value="<?= $id ?>"/>
+                        <input name="btn" type="hidden" value="habitos"/>
+                        <button type="submit" class="btn btn-primary">Editar Hábitos</buttom>
+                    </form>
                     <?php
                         }
                     ?>
@@ -108,8 +115,13 @@
                     <?php
                         }
                         if($_SESSION['nivel'] == 'medico'){
-                           echo '<a href="#" class="btn btn-primary">Adicionar Vacina</a>';
-                        }
+                            echo '
+                             <form action="formMedico.php" method="post">
+                                 <input name="id" type="hidden" value="'.$id.'"/>
+                                 <input name="btn" type="hidden" value="vacina"/>
+                                 <button type="submit" class="btn btn-primary">Adicionar Vacina</buttom>
+                             </form>';
+                         }
                     ?>
                 </div>
 
@@ -128,7 +140,11 @@
                         N°: <?= $linha['numero'] ?> </br>
                         Apartamento: <?= $linha['ap'] ?> </br>
                     </p>
-                    <a href="#" class="btn btn-primary">Editar Dados</a>
+                    <form action="formPaciente.php" method="post">
+                        <input name="id" type="hidden" value="<?= $id ?>"/>
+                        <input name="btn" type="hidden" value="dadosGeograficos"/>
+                        <button type="submit" class="btn btn-primary">Editar Dados</buttom>
+                    </form>
                     
                     <?php
                         }
@@ -153,8 +169,13 @@
                     <?php
                         }
                         if($_SESSION['nivel'] == 'medico'){
-                           echo '<a href="#" class="btn btn-primary">Adicionar Medicamento</a>';
-                        }
+                            echo '
+                             <form action="formMedico.php" method="post">
+                                 <input name="id" type="hidden" value="'.$id.'"/>
+                                 <input name="btn" type="hidden" value="medicamento"/>
+                                 <button type="submit" class="btn btn-primary">Adicionar Medicamento</buttom>
+                             </form>';
+                         }
                     ?>
                 </div>
 
@@ -171,11 +192,16 @@
                         Data da realização: <?= $linha['data'] ?> </br>
                         Anotações: <?= $linha['anotacoes'] ?> </br>
                     </p>
-                    
+                    <form action=""></form>
                     <?php
                         }
                         if($_SESSION['nivel'] == 'medico'){
-                           echo '<a href="#" class="btn btn-primary">Adicionar Exame</a>';
+                           echo '
+                            <form action="formMedico.php" method="post">
+                                <input name="id" type="hidden" value="'.$id.'"/>
+                                <input name="btn" type="hidden" value="exame"/>
+                                <button type="submit" class="btn btn-primary">Adicionar Exame</buttom>
+                            </form>';
                         }
                     ?>
                 </div>
@@ -196,8 +222,13 @@
                     <?php
                         }
                         if($_SESSION['nivel'] == 'medico'){
-                           echo '<a href="#" class="btn btn-primary">Adicionar Cirurgia</a>';
-                        }
+                            echo '
+                             <form action="formMedico.php" method="post">
+                                 <input name="id" type="hidden" value="'.$id.'"/>
+                                 <input name="btn" type="hidden" value="cirurgia"/>
+                                 <button type="submit" class="btn btn-primary">Adicionar Cirurgia</buttom>
+                             </form>';
+                         }
                     ?>
                 </div>
             </div>
